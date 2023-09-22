@@ -1,0 +1,176 @@
+
+INSTALL CENTOS7
+
+yum install -y make gcc gcc-c++ ncurses ncurses-devel openssl libnet libpcap libpcap-devel gsl gsl-devel perl-Thread-Queue.noarch  
+cd /usr/local/src\
+wget https://github.com/SIPp/sipp/releases/download/v3.6.0/sipp-3.6.0.tar.gz 
+tar xzvf sipp-3.6.0.tar.gz 
+cd sipp-3.6.0 
+./configure --with-pcap 
+ make all
+
+
+
+*** Call rate options:
+
+   -r               : Set the call rate (in calls per seconds).  This value can bechanged during
+                      test by pressing '+', '_', '*' or '/'. Default is 10.
+                      pressing '+' key to increase call rate by 1 * rate_scale,
+                      pressing '-' key to decrease call rate by 1 * rate_scale,
+                      pressing '*' key to increase call rate by 10 * rate_scale,
+                      pressing '/' key to decrease call rate by 10 * rate_scale.
+
+   -rp              : Specify the rate period for the call rate.  Default is 1 second and default
+                      unit is milliseconds.  This allows you to have n calls every m milliseconds
+                      (by using -r n -rp m).
+                      Example: -r 7 -rp 2000 ==> 7 calls every 2 seconds.
+                               -r 10 -rp 5s => 10 calls every 5 seconds.
+   -rate_scale      : Control the units for the '+', '-', '*', and '/' keys.
+   -rate_increase   : Specify the rate increase every -rate_interval units (default is seconds).
+                      This allows you to increase the load for each independent logging period.
+                      Example: -rate_increase 10 -rate_interval 10s
+                        ==> increase calls by 10 every 10 seconds.
+   -rate_max        : If -rate_increase is set, then quit after the rate reaches this value.
+                      Example: -rate_increase 10 -rate_max 100
+                        ==> increase calls by 10 until 100 cps is hit.
+   -rate_interval   : Set the interval by which the call rate is increased. Defaults to the value
+                      of -fd.
+   -no_rate_quit    : If -rate_increase is set, do not quit after the rate reaches -rate_max.
+   -l               : Set the maximum number of simultaneous calls. Once this limit is reached,
+                      traffic is decreased until the number of open calls goes down. Default:
+                        (3 * call_duration (s) * rate).
+   -m               : Stop the test and exit when 'calls' calls are processed
+   -users           : Instead of starting calls at a fixed rate, begin 'users' calls at startup,
+                      and keep the number of calls constant.
+
+
+    Auto testing tool for SIP – SIPP
+
+I.  Giới thiệu:
+    .1  SIPP là tool dùng để benchmark năng lực của SIP Server bằng cách tạo ra lưu lượng:
+        i.  Tạo ra lưu lượng REGISTER(đăng ký) tới SIP SERVER
+        ii. Tạo ra lưu lượng INVITE(gọi ra/vào) tới SIP SERVER
+            1.  Hỗ trợ thêm phần tạo ra RTP(thoại) thông qua 1 file đã được ghi âm sẵn
+    .2  SIPP hỗ trợ các giao thức:
+        i.      SIP – TLS
+        ii.     SIP – no TLS
+        iii.    SCTP
+    .3  SIPP được dùng như là:
+        i.  SIP client
+        ii. SIP server
+    .4  SIPP version 3.3 - http://sipp.sourceforge.net
+II. Cài đặt:
+    .1  Thông qua repo của Fedora project
+    .2  yum install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+    .3  yum install sipp
+III.    Kịch bản benchmark dùng SIPP:
+    .1  SIPP hỗ trợ nhiều kịch bản benchmark khác nhau
+        a.  REGISTER only
+        b.  RESGITER + INVITE
+        c.  INVITE only
+    .2  Hiện tại chỉ benchmark phần kịch bản INVITE only:
+     SIPp UAC               SIP SERVER
+        |(1)   INVITE           |
+        |---------------------->|
+        |(2)   100 (optional)   |
+        |<----------------------|
+        |(3)   180 (optional)   |
+        |<----------------------|
+        |(4)   407 Auth         |
+        |<----------------------|
+        |(5)   ACK              |
+        |---------------------->|
+        |(6)   INVITE(user/pass)|
+        |---------------------->|
+        |(7)   100 (optional)   |
+        |<----------------------|
+        |(8)   180 (optional)   |
+        |<----------------------|
+        |(9)   200              |
+        |<----------------------|
+        |                       |
+        |(10)  MEDIA            |
+        |<----------------------|
+        |                       |
+        |(11)  BYE              |
+        |---------------------->|
+        |(12)  200              |
+        |<----------------------|
+    .3  Các options của SIPP hỗ trợ phần INVITE only:
+        a.  –sf : load file xml config dùng để định nghĩa kịch bản benchmark
+        b.  –inf : load file chứa các biến được định nghĩa sẵn
+        c.  –t : u1 – chạy cho UDP protocol(transport)
+        d.  –i : chọn card ethernet cho SIPP client(local_ip)
+        e.  –p : chọn port cho SIPP client(local_port)
+        f.  –m : số lượng call sẽ được thực hiện và kết thúc
+        g.  –r : tần suất gọi trên 1 giây – rate. Các option:
+            i.  –rp : tần suất call trong 1 khoảng thời gian(ms)
+            ii. Ví dụ: 
+                1.  -r 5 –rp 3000 => 5 calls trong vòng 3s
+                2.  –r 7 –rp 1000 => 7 calls trong vòng 1s
+        h.  –l : số lượng call đồng thời được call 
+            i.  default = 3 * call_duration(s) * rate
+            ii. call_duration được đặt trong file xml -> <pause milliseconds="60000" />
+IV. Bước thực hiện benchmark:
+    .1  Tạo kịch bản benchmark – sip_invite.xml
+    .2  Tao file định nghĩa các biến dùng trong sip_invite.xml
+    .3  Chạy lệnh sip:
+    a.  Ví dụ 1:
+        i.  sipp sip_server_ip -sf sip_invite.xml -inf sip_invite.csv -t u1 -i sip_client_ip -p sip_client_port -t u1 -m 100 -r 5
+        ii. Cứ 1s sẽ khởi tạo 5 calls tới SIP SERVER và kết thúc ở call thứ 100
+    b.  Ví dụ 2:
+        i.  sipp sip_server_ip -sf sip_invite.xml -inf sip_invite.csv -t u1 -i sip_client_ip -p sip_client_port -t u1 -m 100 -r 7 -rp 2000
+        ii. Cứ 2s sẽ khởi tạo 7 calls tới SIP SERVER và kết thúc ở call thứ 100
+    c.  Ví dụ 3:
+        i.  sipp sip_server_ip -sf sip_invite.xml -inf sip_invite.csv -t u1 -i sip_client_ip -p sip_client_port -t u1 -m 100 -r 8 -rp 2000 -l 15
+        ii. Sẽ khởi tạo 15 calls tới SIP SERVER trong vong 2s và kết thúc ở call thứ 100
+V.  File định nghĩa mẫu – sip_invite.csv:
+    .1  Cấu trúc file:
+    .2  SEQUENTIAL/USER/RANDOM – thuật toán
+    .3  field0;field1;field2;field3;…
+    .4  Nội dung file sip_invite.csv:
+        SEQUENTIAL
+        1008    ;   118.69.190.30   ;   [authentication username=1008 password=1234];5000;
+          ^     ;         ^         ;                   ^                           ;  ^
+        field0  ;       field1      ;               field2                          ;field3
+VI. File kịch bản benchmark mẫu – sip_invite.xml:
+Xem redmine ticket 6412 - https://redmine.rad.fpt.net/issues/6412
+\
+
+0-5  = 200 ccu 5ph
+5-10 = 400 ccu 5ph
+10-15 = 500 ccu 5ph
+15-20 = 600 cuu 5ph
+20-25 = 800 ccu 5ph
+25-30 = 1000 ccu 5ph
+30-40 = 1100 ccu 10ph
+40-50 = 1200 ccu 10ph
+50-60 = 1300 ccu 10ph
+
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client2_2ph.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 1 -r 100 -rp 1000 
+
+
+
+
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 200 -r 100 -rp 1000 
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 400 -r 200 -rp 1000
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 500 -r 250 -rp 1000
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 600 -r 300 -rp 1000
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 800 -r 400 -rp 1000
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 1000 -r 250 -rp 500
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_10PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 1100 -r 275 -rp 500
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_10PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 1200 -r 300 -rp 500
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_10PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 1300 -r 320 -rp 500
+
+
+

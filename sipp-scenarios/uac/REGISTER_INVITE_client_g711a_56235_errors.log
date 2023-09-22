@@ -1,0 +1,122 @@
+sipp: The following events occurred:
+2020-12-11	22:26:43.496700	1607700403.496700: Aborting call on unexpected message for Call-Id '24-56235@171.244.138.13': while expecting '200' (index 9), received 'SIP/2.0 500 Internal Server Error
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-24-8
+From: <sip:0931338690@171.244.138.16>;tag=24
+To: <sip:12345678911@171.244.138.16>;tag=y6SXUQ9F15U2p
+Call-ID: 24-56235@171.244.138.13
+CSeq: 2 BYE
+Content-Length: 0
+
+'2020-12-11	22:26:43.497361	1607700403.497361: Dead call 24-56235@171.244.138.13 (aborted at index 9), received 'SIP/2.0 404 Not here
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-24--1
+From: <sip:0931338690@171.244.138.16>;tag=24
+To: <sip:12345678911@171.244.138.16>;tag=y6SXUQ9F15U2p
+Call-ID: 24-56235@171.244.138.13
+CSeq: 3 BYE
+Server: OpenSIPS (2.4.8 (x86_64/linux))
+Content-Length: 0
+
+'2020-12-11	22:27:12.901102	1607700432.901102: Aborting call on unexpected message for Call-Id '412-56235@171.244.138.13': while expecting '180' (index 2), received 'SIP/2.0 480 Temporarily Unavailable
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-412-0
+Max-Forwards: 99
+From: sipp <sip:0931338690@171.244.138.16>;tag=412
+To: <sip:12345678911@171.244.138.16>;tag=7mpeFpD53K1ee
+Call-ID: 412-56235@171.244.138.13
+CSeq: 1 INVITE
+User-Agent: FreeSWITCH
+Accept: application/sdp
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY
+Supported: timer, path, replaces
+Allow-Events: talk, hold, conference, refer
+Reason: Q.850;cause=16;text="NORMAL_CLEARING"
+Content-Length: 0
+Remote-Party-ID: "12345678911" <sip:12345678911@171.244.138.16>;party=calling;privacy=off;screen=no
+
+'2020-12-11	22:27:13.798185	1607700433.798185: Aborting call on unexpected message for Call-Id '432-56235@171.244.138.13': while expecting '180' (index 2), received 'SIP/2.0 480 Temporarily Unavailable
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-432-0
+Max-Forwards: 99
+From: sipp <sip:0931338690@171.244.138.16>;tag=432
+To: <sip:12345678911@171.244.138.16>;tag=UmZt14cvS8vSB
+Call-ID: 432-56235@171.244.138.13
+CSeq: 1 INVITE
+User-Agent: FreeSWITCH
+Accept: application/sdp
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY
+Supported: timer, path, replaces
+Allow-Events: talk, hold, conference, refer
+Reason: Q.850;cause=16;text="NORMAL_CLEARING"
+Content-Length: 0
+Remote-Party-ID: "12345678911" <sip:12345678911@171.244.138.16>;party=calling;privacy=off;screen=no
+
+'2020-12-11	22:27:13.862702	1607700433.862702: Aborting call on unexpected message for Call-Id '431-56235@171.244.138.13': while expecting '180' (index 2), received 'SIP/2.0 480 Temporarily Unavailable
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-431-0
+Max-Forwards: 99
+From: sipp <sip:0931338690@171.244.138.16>;tag=431
+To: <sip:12345678911@171.244.138.16>;tag=2ZvKB94ZZcg1D
+Call-ID: 431-56235@171.244.138.13
+CSeq: 1 INVITE
+User-Agent: FreeSWITCH
+Accept: application/sdp
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY
+Supported: timer, path, replaces
+Allow-Events: talk, hold, conference, refer
+Reason: Q.850;cause=16;text="NORMAL_CLEARING"
+Content-Length: 0
+Remote-Party-ID: "12345678911" <sip:12345678911@171.244.138.16>;party=calling;privacy=off;screen=no
+
+'2020-12-11	22:28:48.329625	1607700528.329625: Aborting call on unexpected message for Call-Id '813-56235@171.244.138.13': while expecting '180' (index 2), received 'SIP/2.0 480 Temporarily Unavailable
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-813-0
+Max-Forwards: 99
+From: sipp <sip:0931338690@171.244.138.16>;tag=813
+To: <sip:12345678911@171.244.138.16>;tag=gv0S0grQQ4D1H
+Call-ID: 813-56235@171.244.138.13
+CSeq: 1 INVITE
+User-Agent: FreeSWITCH
+Accept: application/sdp
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY
+Supported: timer, path, replaces
+Allow-Events: talk, hold, conference, refer
+Reason: Q.850;cause=16;text="NORMAL_CLEARING"
+Content-Length: 0
+Remote-Party-ID: "12345678911" <sip:12345678911@171.244.138.16>;party=calling;privacy=off;screen=no
+
+'2020-12-11	22:28:49.348913	1607700529.348913: Aborting call on unexpected message for Call-Id '824-56235@171.244.138.13': while expecting '180' (index 2), received 'SIP/2.0 480 Temporarily Unavailable
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-824-0
+Max-Forwards: 99
+From: sipp <sip:0931338690@171.244.138.16>;tag=824
+To: <sip:12345678911@171.244.138.16>;tag=9871U6B0y5r9r
+Call-ID: 824-56235@171.244.138.13
+CSeq: 1 INVITE
+User-Agent: FreeSWITCH
+Accept: application/sdp
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY
+Supported: timer, path, replaces
+Allow-Events: talk, hold, conference, refer
+Reason: Q.850;cause=16;text="NORMAL_CLEARING"
+Content-Length: 0
+Remote-Party-ID: "12345678911" <sip:12345678911@171.244.138.16>;party=calling;privacy=off;screen=no
+
+'2020-12-11	22:29:15.140487	1607700555.140487: Aborting call on unexpected message for Call-Id '820-56235@171.244.138.13': while expecting '183' (index 3), received 'SIP/2.0 480 Temporarily Unavailable
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-820-0
+Max-Forwards: 99
+From: sipp <sip:0931338690@171.244.138.16>;tag=820
+To: <sip:12345678911@171.244.138.16>;tag=vZBB2DKXyQeUK
+Call-ID: 820-56235@171.244.138.13
+CSeq: 1 INVITE
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY
+Supported: timer, path, replaces
+Allow-Events: talk, hold, conference, refer
+Reason: Q.850;cause=16;text="NORMAL_CLEARING"
+Content-Length: 0
+Remote-Party-ID: "Outbound Call" <sip:100@171.244.138.16>;party=calling;privacy=off;screen=no
+
+'2020-12-11	22:29:16.220158	1607700556.220158: Aborting call on unexpected message for Call-Id '836-56235@171.244.138.13': while expecting '183' (index 3), received 'SIP/2.0 500 Internal Server Error
+Via: SIP/2.0/UDP 171.244.138.13:5061;branch=z9hG4bK-56235-836-0
+From: sipp <sip:0931338690@171.244.138.16>;tag=836
+To: <sip:12345678911@171.244.138.16>;tag=DDD52jFeK9HmQ
+Call-ID: 836-56235@171.244.138.13
+CSeq: 1 INVITE
+Content-Length: 0
+
+'

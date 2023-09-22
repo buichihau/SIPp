@@ -1,0 +1,72 @@
+cd /u01/freeswitch_new_docker
+docker-compose down && docker-compose up -d
+
+Telco: 103.29.26.192:5060
+reg: 103.29.26.193:5060
+user: 103.29.26.194:5060
+
+192.168.2.192	wintel-sip-proxy-telco-1
+192.168.2.193	wintel-sip-register-1
+192.168.2.194	wintel-sip-proxy-user-1
+192.168.2.195	wintel-fw-core-1
+192.168.2.196	wintel-fw-core-2
+192.168.2.197	wintel-fw-core-3
+192.168.2.198	wintel-fw-core-4
+192.168.2.199	﻿omicrm-sip-storage-3
+
+
+
+103.29.26.195	wintel-fw-core-1
+103.29.26.196	wintel-fw-core-2
+103.29.26.197	wintel-fw-core-3
+103.29.26.198	wintel-fw-core-4
+
+
+Telco: 103.29.26.192:5060
+reg: 103.29.26.193:5060
+user: 103.29.26.194:5060
+
+
+Server Telco:
+- 192.168.2.146 103.29.26.146
+- 192.168.2.147 103.29.26.147
+
+
+- 192.168.2.146 103.29.26.146
+
+cd /u01/sipp-scenarios/uas_wintel
+
+/u01/sipp-3.6.0/sipp -sf /u01/sipp-scenarios/uas_wintel/sipp_uas_pcap_g711a.xml -bind_local 103.29.26.146
+
+
+ps -ef | grep sipp
+
+- 192.168.2.147 103.29.26.147
+
+cd /u01/sipp-scenarios/uas_wintel
+
+/u01/sipp-3.6.0/sipp -sf /u01/sipp-scenarios/uas_wintel/sipp_uas_pcap_g711a.xml -bind_local 103.29.26.147
+
+
+Server test call
+
+- 192.168.2.119 103.29.26.119
+- 192.168.2.122 103.29.26.122
+
+cd /u01/sipp-scenarios/uac_401
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client2_1.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_400data.csv -m 1 -r 5 -rp 1000 
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client2_1.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_197data.csv -m 5 -r 5 -rp 1000 
+
+
+call 5PH
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_5PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_197data.csv -m 1 -r 5 -rp 1000 
+
+
+call 10PH 
+
+/u01/sipp-3.6.0/sipp 103.29.26.194:5060 -sf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_WINTEL_10PH.xml -inf /u01/sipp-scenarios/uac_401/REGISTER_INVITE_client_wintel_197data.csv -m 5 -r 5 -rp 1000 
+
+

@@ -1,0 +1,5 @@
+sipp 127.0.0.1 -sf REGISTER_INVITE_client2_1.xml -inf REGISTER_INVITE_client.csv -recv_timeout 10000 -m 1 -l 1
+#sipp 127.0.0.1 -sf REGISTER_INVITE_REFER_3.xml -inf REGISTER_INVITE_REFER.csv -m 1 -l 1 -r 1 -rp 10000
+
+#sipp -sf Active-Media/uas-active.xml -i <local_ip> -p <local_port> -m 1
+#sipp -sf uas.xml -i 127.0.0.1 -p 5060 -m 1

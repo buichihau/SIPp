@@ -1,0 +1,285 @@
+Problem EAGAIN on socket  9 and poll_idx  is 3 
+Added first buffered message to socket 9
+Problem EWOULDBLOCK on socket  9 and poll_idx  is 3 
+Exit problem event on socket 9 
+Wrote 324 of 324 bytes in an output buffer.
+----------------------------------------------- 2023-02-22 08:35:08.403738
+TCP message received [536] bytes :
+
+SIP/2.0 401 Unauthorized
+Via: SIP/2.0/TCP 103.29.26.119:12339;branch=z9hG4bK-84582-1-0;rport=12339
+From: <sip:100@chihau.com>;tag=1
+To: <sip:100@chihau.com>;tag=t5QvagQjK58cg
+Call-ID: 1-84582@103.29.26.119
+CSeq: 1 REGISTER
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+WWW-Authenticate: Digest realm="chihau.com", nonce="f8a3e4b0-0cf8-4f58-89e4-cbc5466a671c", algorithm=MD5, qop="auth"
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:08.404209
+TCP message sent (553 bytes):
+
+REGISTER sip:103.29.26.109 SIP/2.0
+Via: SIP/2.0/TCP 103.29.26.119:12339;branch=z9hG4bK-84582-1-3
+From: <sip:100@chihau.com>;tag=1
+To: <sip:100@chihau.com>
+Call-ID: 1-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: sip:100@103.29.26.119:12339
+Authorization: Digest username="100",realm="chihau.com",cnonce="6b8b4567",nc=00000001,qop=auth,uri="sip:103.29.26.109:50060",nonce="f8a3e4b0-0cf8-4f58-89e4-cbc5466a671c",response="d08739618cb2f60791cf14ebe3e01b1e",algorithm=MD5
+Max-Forwards: 10
+Expires: 120
+User-Agent: SIPp/Win32
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:08.431200
+TCP message received [497] bytes :
+
+SIP/2.0 200 OK
+Via: SIP/2.0/TCP 103.29.26.119:12339;branch=z9hG4bK-84582-1-3;rport=12339
+From: <sip:100@chihau.com>;tag=1
+To: <sip:100@chihau.com>;tag=UeHNcB8NgeZZB
+Call-ID: 1-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: <sip:100@103.29.26.119:12339>;expires=120
+Date: Wed, 22 Feb 2023 01:35:08 GMT
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+Content-Length: 0
+
+
+Problem EAGAIN on socket  9 and poll_idx  is 3 
+Added first buffered message to socket 9
+Problem EWOULDBLOCK on socket  9 and poll_idx  is 3 
+Exit problem event on socket 9 
+Wrote 324 of 324 bytes in an output buffer.
+----------------------------------------------- 2023-02-22 08:35:10.404448
+TCP message received [536] bytes :
+
+SIP/2.0 401 Unauthorized
+Via: SIP/2.0/TCP 103.29.26.119:15395;branch=z9hG4bK-84582-2-0;rport=15395
+From: <sip:100@chihau.com>;tag=2
+To: <sip:100@chihau.com>;tag=vQaee6rSDQNjQ
+Call-ID: 2-84582@103.29.26.119
+CSeq: 1 REGISTER
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+WWW-Authenticate: Digest realm="chihau.com", nonce="022051bf-214b-45a2-a46d-1d5cf909c48a", algorithm=MD5, qop="auth"
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:10.404671
+TCP message sent (553 bytes):
+
+REGISTER sip:103.29.26.109 SIP/2.0
+Via: SIP/2.0/TCP 103.29.26.119:15395;branch=z9hG4bK-84582-2-3
+From: <sip:100@chihau.com>;tag=2
+To: <sip:100@chihau.com>
+Call-ID: 2-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: sip:100@103.29.26.119:15395
+Authorization: Digest username="100",realm="chihau.com",cnonce="327b23c6",nc=00000001,qop=auth,uri="sip:103.29.26.109:50060",nonce="022051bf-214b-45a2-a46d-1d5cf909c48a",response="264bb627a484aee593392e758b29f154",algorithm=MD5
+Max-Forwards: 10
+Expires: 120
+User-Agent: SIPp/Win32
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:10.424278
+TCP message received [549] bytes :
+
+SIP/2.0 200 OK
+Via: SIP/2.0/TCP 103.29.26.119:15395;branch=z9hG4bK-84582-2-3;rport=15395
+From: <sip:100@chihau.com>;tag=2
+To: <sip:100@chihau.com>;tag=X036F19va0B5j
+Call-ID: 2-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: <sip:100@103.29.26.119:12339>;expires=118
+Contact: <sip:100@103.29.26.119:15395>;expires=120
+Date: Wed, 22 Feb 2023 01:35:10 GMT
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+Content-Length: 0
+
+
+Problem EAGAIN on socket  9 and poll_idx  is 3 
+Added first buffered message to socket 9
+Problem EWOULDBLOCK on socket  9 and poll_idx  is 3 
+Exit problem event on socket 9 
+Wrote 324 of 324 bytes in an output buffer.
+----------------------------------------------- 2023-02-22 08:35:12.404616
+TCP message received [536] bytes :
+
+SIP/2.0 401 Unauthorized
+Via: SIP/2.0/TCP 103.29.26.119:20473;branch=z9hG4bK-84582-3-0;rport=20473
+From: <sip:100@chihau.com>;tag=3
+To: <sip:100@chihau.com>;tag=y9vZHvt0781Qe
+Call-ID: 3-84582@103.29.26.119
+CSeq: 1 REGISTER
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+WWW-Authenticate: Digest realm="chihau.com", nonce="11b623b8-767d-4a30-a655-7156c5c8f188", algorithm=MD5, qop="auth"
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:12.404815
+TCP message sent (553 bytes):
+
+REGISTER sip:103.29.26.109 SIP/2.0
+Via: SIP/2.0/TCP 103.29.26.119:20473;branch=z9hG4bK-84582-3-3
+From: <sip:100@chihau.com>;tag=3
+To: <sip:100@chihau.com>
+Call-ID: 3-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: sip:100@103.29.26.119:20473
+Authorization: Digest username="100",realm="chihau.com",cnonce="643c9869",nc=00000001,qop=auth,uri="sip:103.29.26.109:50060",nonce="11b623b8-767d-4a30-a655-7156c5c8f188",response="8d1565da39c08010fa492eaf42990a84",algorithm=MD5
+Max-Forwards: 10
+Expires: 120
+User-Agent: SIPp/Win32
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:12.421158
+TCP message received [601] bytes :
+
+SIP/2.0 200 OK
+Via: SIP/2.0/TCP 103.29.26.119:20473;branch=z9hG4bK-84582-3-3;rport=20473
+From: <sip:100@chihau.com>;tag=3
+To: <sip:100@chihau.com>;tag=ZjprKQB44Hraa
+Call-ID: 3-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: <sip:100@103.29.26.119:12339>;expires=116
+Contact: <sip:100@103.29.26.119:15395>;expires=118
+Contact: <sip:100@103.29.26.119:20473>;expires=120
+Date: Wed, 22 Feb 2023 01:35:12 GMT
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+Content-Length: 0
+
+
+Problem EAGAIN on socket  9 and poll_idx  is 3 
+Added first buffered message to socket 9
+Problem EWOULDBLOCK on socket  9 and poll_idx  is 3 
+Exit problem event on socket 9 
+Wrote 324 of 324 bytes in an output buffer.
+----------------------------------------------- 2023-02-22 08:35:14.405094
+TCP message received [536] bytes :
+
+SIP/2.0 401 Unauthorized
+Via: SIP/2.0/TCP 103.29.26.119:10001;branch=z9hG4bK-84582-4-0;rport=10001
+From: <sip:100@chihau.com>;tag=4
+To: <sip:100@chihau.com>;tag=0UFHNjv71teXN
+Call-ID: 4-84582@103.29.26.119
+CSeq: 1 REGISTER
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+WWW-Authenticate: Digest realm="chihau.com", nonce="1b8899b4-25a0-4995-9d9d-a0a90a7f8fc1", algorithm=MD5, qop="auth"
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:14.405278
+TCP message sent (553 bytes):
+
+REGISTER sip:103.29.26.109 SIP/2.0
+Via: SIP/2.0/TCP 103.29.26.119:10001;branch=z9hG4bK-84582-4-3
+From: <sip:100@chihau.com>;tag=4
+To: <sip:100@chihau.com>
+Call-ID: 4-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: sip:100@103.29.26.119:10001
+Authorization: Digest username="100",realm="chihau.com",cnonce="66334873",nc=00000001,qop=auth,uri="sip:103.29.26.109:50060",nonce="1b8899b4-25a0-4995-9d9d-a0a90a7f8fc1",response="77f94ddcbc90f4bfc40251eef06189c9",algorithm=MD5
+Max-Forwards: 10
+Expires: 120
+User-Agent: SIPp/Win32
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:14.420926
+TCP message received [653] bytes :
+
+SIP/2.0 200 OK
+Via: SIP/2.0/TCP 103.29.26.119:10001;branch=z9hG4bK-84582-4-3;rport=10001
+From: <sip:100@chihau.com>;tag=4
+To: <sip:100@chihau.com>;tag=1489pDDBZ34FH
+Call-ID: 4-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: <sip:100@103.29.26.119:12339>;expires=114
+Contact: <sip:100@103.29.26.119:15395>;expires=116
+Contact: <sip:100@103.29.26.119:20473>;expires=118
+Contact: <sip:100@103.29.26.119:10001>;expires=120
+Date: Wed, 22 Feb 2023 01:35:14 GMT
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+Content-Length: 0
+
+
+Problem EAGAIN on socket  9 and poll_idx  is 3 
+Added first buffered message to socket 9
+Problem EWOULDBLOCK on socket  9 and poll_idx  is 3 
+Exit problem event on socket 9 
+Wrote 324 of 324 bytes in an output buffer.
+----------------------------------------------- 2023-02-22 08:35:16.405939
+TCP message received [536] bytes :
+
+SIP/2.0 401 Unauthorized
+Via: SIP/2.0/TCP 103.29.26.119:11466;branch=z9hG4bK-84582-5-0;rport=11466
+From: <sip:100@chihau.com>;tag=5
+To: <sip:100@chihau.com>;tag=2D22r8XevcU2c
+Call-ID: 5-84582@103.29.26.119
+CSeq: 1 REGISTER
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+WWW-Authenticate: Digest realm="chihau.com", nonce="de49ad9e-7b2d-47d4-bc99-d9252a716fa8", algorithm=MD5, qop="auth"
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:16.406255
+TCP message sent (553 bytes):
+
+REGISTER sip:103.29.26.109 SIP/2.0
+Via: SIP/2.0/TCP 103.29.26.119:11466;branch=z9hG4bK-84582-5-3
+From: <sip:100@chihau.com>;tag=5
+To: <sip:100@chihau.com>
+Call-ID: 5-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: sip:100@103.29.26.119:11466
+Authorization: Digest username="100",realm="chihau.com",cnonce="74b0dc51",nc=00000001,qop=auth,uri="sip:103.29.26.109:50060",nonce="de49ad9e-7b2d-47d4-bc99-d9252a716fa8",response="45f3914a2a5c7ad5fd71230f0dc47267",algorithm=MD5
+Max-Forwards: 10
+Expires: 120
+User-Agent: SIPp/Win32
+Content-Length: 0
+
+
+----------------------------------------------- 2023-02-22 08:35:16.422915
+TCP message received [705] bytes :
+
+SIP/2.0 200 OK
+Via: SIP/2.0/TCP 103.29.26.119:11466;branch=z9hG4bK-84582-5-3;rport=11466
+From: <sip:100@chihau.com>;tag=5
+To: <sip:100@chihau.com>;tag=3pUUt3ejSNHNr
+Call-ID: 5-84582@103.29.26.119
+CSeq: 2 REGISTER
+Contact: <sip:100@103.29.26.119:12339>;expires=112
+Contact: <sip:100@103.29.26.119:15395>;expires=114
+Contact: <sip:100@103.29.26.119:20473>;expires=116
+Contact: <sip:100@103.29.26.119:10001>;expires=118
+Contact: <sip:100@103.29.26.119:11466>;expires=120
+Date: Wed, 22 Feb 2023 01:35:16 GMT
+User-Agent: FreeSWITCH
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, INFO, UPDATE, REGISTER, REFER, NOTIFY, PUBLISH, SUBSCRIBE
+Supported: timer, path, replaces
+Content-Length: 0
+
+
